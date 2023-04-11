@@ -81,28 +81,16 @@ The baseline is performed in the notebook [demo_generate_baseline](https://githu
 <a name="sec23"></a>
 ### 2.3 Evaluations
 
-There are three ways of evaluating the calibration performance. Since the experiment is an OSSE, we do have the true SSH on the SWOT swath. Hence the first possible evaluation is directly on the SWOT swath where the calibrated SWOT data are compared to the true SWOT data. The second evaluation is performed using OSE-type metrics, i.e. as if the true data on the swath wasn't available. In this case, the calibrated SWOT data are interpolated onto some Nadir tracks (envisat, geosat2, jason1 and topex-poseidon) and then compared to the true SWOT data (also interpolated on the Nadir tracks). The third evaluation is the same as the second one but with an independant satellite (cryosat) that has never been used to help calibrate SWOT. 
-
-
-#### Evaluation on SWOT swath
-
+Since the experiment is an OSSE, we do have the true SSH on the SWOT swath. Here the evaluation is directly on the SWOT swath where the calibrated SWOT data are compared to the true SWOT data. 
 The first evaluation of the calibration methods is based on the comparison of the SWOT calibrated swaths with the error-free SWOT swaths. It includes two scores, one based on the Root-Mean-Square Error (RMSE), the other a noise-to-signal ratio based on an isotropic 2D Fourier wavenumber spectra. The evaluation notebook [demo_evaluate_onswot_baseline](https://github.com/SammyMetref/2023c_SWOT_error_calibration_Glorys/blob/main/notebooks_evaluate_on_swot/demo_evaluate_onswot_baseline.ipynb) implements the computation of these two scores for the baseline as they appear in the first leaderboard. 
 
-After running the evaluation notebook for a method, the files stat_'METHOD'.nc (RMSE data), psd_'METHOD'.nc (PSD and SNR data) and ldb_'METHOD'.nc (Leaderboard data) are saved in the chosen foler. 
 
-A comparison notebook, [compare_evaluations_onswot](https://github.com/SammyMetref/2023c_SWOT_error_calibration_Glorys/blob/main/notebooks_evaluate_on_swot/compare_evaluations_onswot.ipynb), is available to plot and compare the statistics and the spectral diagnostics of multiple methods in the same figures. Also, the leaderboard for each method can be printed. 
-
-
-#### Evaluation on Nadirs tracks
-
-The second evaluation of the calibration methods is based on the comparison of the true SWOT data interpolated on Nadir tracks. It also includes two scores, one based on the Root-Mean-Square Error (RMSE), the other a noise-to-signal ratio based on a one-dimensional (along Nadir tracks crossing the swath) Fourier wavenumber spectra. The evaluation notebook [demo_evaluate_onnadirs_baseline](https://github.com/SammyMetref/2023c_SWOT_error_calibration_Glorys/blob/main/notebooks_evaluate_on_nadirs/demo_evaluate_onnadirs_baseline.ipynb) implements the computation of these two scores for the baseline as they appear in the second leaderboard. 
+#### Evaluation at global scale
 
 
-#### Evaluation on an independant nadir
- 
-This third evaluation is exactly the same as the previous one (Nadir tracks) but using an independant nadir track. Here, the cryosat altimeter data has been simulated on the NAtl60 reference simulation and should not have been used in any way to tune the SWOT calibration. 
 
-The evaluation notebook [demo_evaluation_onindepnadir_baseline](https://github.com/SammyMetref/2023c_SWOT_error_calibration_Glorys/blob/main/notebooks_evaluate_on_nadirs/demo_evaluation_onindepnadir_baseline.ipynb) implements the computation of these two scores for the baseline as they appear in the third leaderboard. 
+#### Evaluation in the Gulf Stream region
+
 
 
 
