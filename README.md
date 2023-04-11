@@ -67,7 +67,7 @@ The SWOT data to calibrate (the inputs: **ssh_err**) and their equivalent error-
 In no way the targets that are available during the evaluation period should be used in the calibration process.   
 
 
-<img src="figures/DC_SWOT_error_calibration_GS-illustration.png" /> 
+<img src="figures/DC_SWOT_error_calibration_glorys-illustration.png" /> 
 <center><em>Fig.: Example of one target of the data challenge: SWOT data without errors (left), one input of the data challenge: SWOT data with errors (center) and the difference between the two (right). Here, SWOT is "flying" over the NATL60 model simulation in the Gulf Stream region.
 </em></center>
 
